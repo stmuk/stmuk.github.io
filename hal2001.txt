@@ -1,0 +1,310 @@
+A HAL2001 Summary
+
+This isn't a complete summary of all HAL2001 sessions but only the ones
+I attended.
+
+<http://www.hal2001.org/>
+
+The conference was held at University of Twente near Enschede in Holland
+ten kilometres from the German border and over two hours train ride
+from Amsterdam.  Everyone put their tents up on a campus university with
+a lake which contained a clocktower submerged in an arty way.
+
+<http://www.2600.com/>
+
+First talk early Friday morning was Emmanuel Goldstein of 2600 who
+seemed surprised to get into legal trouble over registering domains
+such as fuckford.com.  His talk along usual East Coast liberal lines
+was fairly fact-free but actually quite entertaining and amusing.
+
+<http://www.maptive.com/>
+
+There followed a panel about "Privacy and Location data in Mobile
+Telephony" being driven by a US legal requirement for location data for
+mobiles for 911 emergency services to find people within 150m.
+
+There were several ways of getting location data with the current networks
+of which the simplest was "Cell ID" and involved logging the currently
+used base station and was accurate to 300m-5km.  Triangulation used
+three cells and needed both expensive phone and network upgrades to gain
+a 50m accuracy.  "Time of Arrival" used "Cell ID" and timing various
+signals to get 50m accuracy.
+
+The alternative to these network based systems was "Assisted GPS"
+which involved putting a cheap (~$10) GPS chip in the phone and no
+network changes.
+
+In the commercial applications a degree of anonymisation was done for
+privacy reasons and the ICP (Independent Content Providers) were separate
+from the GSM providers.  The ICPs didn't get the caller id directory
+but rather a unique id.  However the ICP could ask the user for their
+number anyway.
+
+<http://www.cryptolabs.org/>
+
+"Open Source Crypto hardware using Java cards" was by Ruediger Weis of
+the Chaos Computer Club (CCC) who had a particularly psychedelic KDE2
+root window and several puns on the word "hash" and an algorithm called
+"THC" in his talk.  His talk was basically about cool hacks to subvert
+weak export style crypto into strong crypto and putting private keys on
+the cards (private keys on public servers being bad).
+
+Some of these were fairly obvious in hindsight, for example calling
+DES (useless) three times to produce 3DES which is probably one of the
+better crypto choices.  Also he mentioned a technique called whitening
+and discussed several simple ways of adding more entropy to crypto to
+strength it.  All this was in the Schneier book.
+
+<http://www.opentap.org/>
+
+In the "Transport of Intercepted IP Traffic" by Paul Wouters we learn
+the Dutch state seemed surprisingly open about Internet tapping and even
+released (fairly broken looking) XML specs for how it was to be done.
+He was running a project to develop "free software that will be a
+minimalistic implementation of the Dutch (and soon European) tapping
+requirements" (!!!!)
+
+<http://www.eurorights.org>
+
+Tom Vogt on DeCSS history was interesting.  It was probably nothing new
+but still interesting.  Basically the whole DVD business was run through
+a series of complex relations among a handful of businesses.
+
+Strangely these businesses seemed to share the same postal addresses
+and seem to have everything legally stitched up among themselves.
+
+At this point I visited the nearby town of Enschede with some unusual
+shops.
+
+<http://www.kosmickitchen.nl>
+
+Enschede was distinguished by having a firework factory explode there
+last year that killed 21 people.
+
+<http://www.itc.nl/~hofstee/firework.html>
+
+Harl (void) had a talk on "Hacking the Brain: From Reverse Engineering
+to Optimisation".  Luckily I have lost my back of envelope notes for
+this one so I can't unintentionally misrepresent his views but I can
+recall he said "Drugs were Bad" and "Redbull (glucose) and fresh air
+(oxygen) were good" for learning although they didn't aid recall.
+
+He has slidewarez of his talk anyway, although I probably offended him
+by mistaking his blackbox window manager for windows (I was right at
+the back of the room).
+
+The usually softcopy Phrack 57 was relaunched in hard copy form 1930UTC
+by someone throwing large numbers of free editions up in the air near
+the bar area where we fought over the precious "0 d4y".
+
+Online version was out 24 hours later so anyone can write cookie-cutter
+IA64 buffer overflows:
+
+<http://www.phrack.org/show.php?p=57>
+
+Friday ended with a film showing of 2600's "Freedom Downtime".
+
+<http://www.freedomdowntime.com/>
+
+This was an road movie about Kevin Mitnick which attacked the way he
+was shown by takedown and John Markov.  It was rather long and obviously
+made by fairly uncritical friends of Mitnick but had its moments.
+
+It didn't really touch on what he actually did but he certainly seemed
+to have had a raw deal in spending so long in jail, including many
+months in solitary before his trial.  A rather touching moment was when
+2600 managed to film him waving through the prison bars from prison.
+This was a kewl hack.
+
+<Http://www.citi.umich.edu/u/provos/>
+
+Saturday started with Neils Provos (OpenBSD developer) talking about
+"Detecting Steganographic Content on the Internet".
+
+He read a claim by a journalist that terrorists were using images on ebay,
+amazon etc to communicate and decided to see if he could find any images
+like this.
+
+He found that most of the popular steganographic programs (jsteg and
+jphide) and even the original version of his own outreach program where
+quite trivial to detect (that is didn't really work) using statistical
+techniques.  He wrote a program Stegdetect to detect messages which he
+ran distributed over 100 university workstations and had been told off
+the computing dept for this!
+
+<http://www.outguess.org/detection.html>
+
+But from two million images he couldn't find one hidden message, so
+maybe the journalist was inaccurate in his claims.  He also had modified
+outguess to be stronger as a result of all this.
+
+I liked the way the thing was triggered by a journalist scare story and
+how technical progress had come from it.  Maybe the usual distortions
+of the press are an untouched source of open source creativity?
+
+<http://www.freeswan.org/>
+
+In Opportunistic Encryption in IP Security John Gilmore and Hugh Daniel
+were developing FreeS/WAN -- an IPSEC implementation for linux.
+
+Recently they had added Opportunistic Encryption, a way of sneaking strong
+crypto into products so that it would be automatically used if possible.
+It worked by putting the public keys (the key distribution which is
+generally the hard bit) in the reverse DNS.
+
+I wasn't convinced by this since DNS is a terribly insecure protocol and
+most users aren't able to change it anyway but their reasoning was that
+it would be fixed by someone else in the future anyway.
+
+<http://www.monkey.org/~dugsong/>
+
+SSH Traffic Analysis by Dug Song (another OpenBSDer) and Solar Designer
+was packed out and another very good talk.  With version 1 of the SSH
+protocol it was possible to calculate password lengths (which obviously
+restricts the search space for dictionary attacks) and due to the nature
+of interactive terminal use the length of commands typed.
+
+Full details at
+
+<http://www.openwall.com/advisories/OW-003-ssh-traffic-analysis.txt>
+
+Dug had released dsniff which included an SSH sniffer and demonstrated
+password length sniffing.  A work around existed in OpenSSH but this
+was a basic flaw in SSH 1.
+
+Alex (void) had a hacking sound performance that probably isn't easily
+translated into words.  He showed off his shiny new generative music
+software under Borlands Kylix on Linux and a Perl program with TK sliders
+to generate beats.
+
+We all went off to a book burning of Microsoft manuals (although some
+Borland ones seem to have been added as well much to the dismay of
+several).
+
+It was a laugh especially when tedious windows help type documents were
+read out before going on the flames but I still felt slight unease about
+the Kristalnacht-type associations of this sort of thing.  The burned
+books (destroyed information) left a sinister symmetrical rectangle
+of ash.
+
+One (void) mailing list member fell in a ditch.
+
+There was a party in the "Vesting Hall" a student union bar with an large
+range of the Dutch equivalent of real ales.  I am not sure what "vesting"
+is but it had the logo of a deranged cow with its tongue lolling out.
+
+A man in drag was dressed as Laura Croft and running around like in
+Tombraider which had all the camera/video geeks taking photos.
+
+I watched the film 2001 with HAL in it and thought how boring most of
+the film is apart the flying through space bit at the end.
+
+<http://www.klpahek.nl>
+
+Sunday started with a Klpahek panel.  Klaphek is the Dutch hacker zine
+that took over from Hacktic.  Unfortunately I missed the start but it
+seemed they were trying to crack the Dutch pay as go mobile cards by
+somehow plotting graph related to the numbers printed on them, assuming
+the random number generation to be weak.
+
+<http://hi.precalc.net/>
+
+Hugh Daniel's "Future Directions in Operating Systems" was definitely
+one of the most interesting talks.  He was a loud opinionated American
+programmer/hacker type with a RMS-like revulsion to smokers and an
+excellent and entertaining speaker.  He was the manager for FreeS/WAN
+and looked like RMS.
+
+He had been waiting for ten years for GNU Hurd which was "somewhere
+off in deep space".  He drew a distinction between "mechanism" and
+"paradigm".  BeOS hadn't taken off because its object and message passing
+were mechanism changes only (like a library change) and its paradigm
+(how you actually use it) hadn't changed at all because it was used just
+like UNIX anyway.
+
+A paradigm change would be replacing sockets ("a steaming pile of function
+calls") by something like the control files of PLAN9.  Security had
+to be rethought from the ground up as well and the new directions were
+real-time, security and capabilities.  He talked about capability based
+OSes like Norm Hardy's KeyKOS.  A capability (oversimplified) was the
+ability to talk to something.
+
+KeyKOS was an old IBM OS of the 1970s and was the only external system
+used by the NSA because it was highly secure.  On such a system you could
+take a system snapshot and add hardware and reconfigure without reboot.
+
+A modern (and unfinished) capability based OS is Eros ("Extremely Reliable
+Operating System").
+
+<http://www.eros-os.org>
+
+We needed more computing engineering (application of science) and less
+computer science.  The problem of resource exhaustion needed to be tackled
+through agoric systems where software negotiated for resources like swap
+and CPU through trading in market-type processes.
+
+Software needed to be able to "play ten mpeg pron movies at once without
+jerking" (this raised a laugh from the audience who seemed fairly
+braindead and probably recovering from the previous night).  The guy in
+front of me was wearing a towel on his head Douglas Adams stylee.
+
+The trick was to write software with an API which could negotiate and
+he held up IKE (IPSEC key exchange) as an example of something that
+by deliberate design (supposedly for security) did this very poorly.
+He discussed secure booting where an OS can tell if it the first one
+running or running under another OS.
+
+<http://www.xs4all.nl/~vorpal/>
+
+"How secure is AES/Rijndeal?" asked Niels Ferguson a leading academic
+cryptographer.  His answer was probably secure for your job because of
+its US government stamp of approval but probably not as technically
+secure as once thought because he could reduce it to simple looking
+equations for a small number of rounds (four).
+
+Unfortunately these results had been too late for the AES process.
+Of the candidates he thought Cambridge University's Serpent was probably
+the safest although it was slow.  Rijndeal was probably the worse.
+The more paranoid members of the audience wondered if they choose it
+for that reason.
+
+He had also recently found security problems with Intel's content
+protection but since had to travel regularly to America he was worried
+about publishing his work for fear of the legal consequences.
+
+He was genuinely angry that he "couldn't talk about his work last week"
+in Holland because of American law.
+
+<http://www.dis.org/projects.html>
+
+Pete Shipley and Stefan Zehl talked about "war driving", driving around
+monitoring wavelan in several cities.  Pete had got 25 mile wavelan
+connections in California and also discovered open networks outside Apple.
+Stefan said that in Germany wavelan hacking currently appeared to be
+legal because the frequency was totally unregulated.  In London's Soho
+they found 200 networks in 1 1/2 hours.  Shipley's Perl software used
+GPS to log the base stations on a map.  Their conclusion was wavelan
+had put Internet security (already poor) back ten years.
+
+Subjective impressions:
+
+The whole thing was a lot larger with 2800 people than either HIP97 or
+HEA93.  Wandering around the hall most were using PCs with a handful of
+recent Apple laptops and very few UNIX workstations (Suns and Indys).
+Many of the PCs were running Windows but probably most were running
+some form of UNIX (probably linux).  KDE2 and windowmaker seemed to be
+the most popular window managers.  Some were still running without X.
+Wavelan or clone cards were very popular.
+
+FreeBSD and OpenBSD seemed to have a higher profile than linux generally
+(with the exception of Debian).  Many of the Germans (unsurprisingly) were
+running Suse. There was an OpenBSD tent and they had rather aggressively
+fly-posted the campus with posters.  They had the best t shirts as well,
+although I was given a FreeBSD 4.3 CD free.
+
+It was interesting just looking at people's t shirts.  One good slogan
+was "hack to learn not learn to hack".
+
+Rop asked in the closing ceremony are you a "community or just
+consumers?" and urged people to help clear up.  I went away my conscience
+fairly clear because I picked up a few broken plastic cups.
